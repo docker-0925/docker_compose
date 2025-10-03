@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  nginx-example:
+    container_name: nginx-example #disarankan sama dgn atribut diatas
+    image: nginx:latest
+  mongodb-example:
+    container_name: mongodb-example #disarankan sama dgn atribut diatas
+    image: mongo:latest

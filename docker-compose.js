@@ -57,3 +57,8 @@ docker compose down //hapus container di docker compose, jika posisi container r
 //Seperti diinfo diawal, saat menggunakan docker compose, informasi konfi compose akan disimpan dalam project
 //Dan secara default nama projectnya adalah nama folder lokasi file yaml berada
 docker compose ls //melihat daftar project yang sedang berjalan, container harus dalam posisi running
+
+//Service
+//Dalam konfig docker compose, container disimpan dalam konfigurasi bernama services
+//Disana dapat menambahkan satu atau lebih services dalam konfigurasi filenya
+https://docs.docker.com/reference/compose-file/services/
