@@ -32,3 +32,8 @@ https://yaml.org/
 //Bisa menambahkan bagian services untuk menentukan container name, image docker container, dan spesifikasi lainnya
 docker compose create //untuk create container, jalankan di dalam folder konfigurasi yaml berada
 //Bisa membuat beberapa container sekaligus, namun docker bisa deteksi container mana yang belum dibuat itu yg dieksekusi
+
+//Menjalankan Container
+//Container yang dibuat dengan docker compose, perlu dijalankan secara manual
+//Sebelumnya bisa menjalankan container dengan perintah docker container start
+docker compose start //jalankan container dengan docker compose, semua container di file yaml akan dijalankan
