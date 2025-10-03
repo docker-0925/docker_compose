@@ -11,3 +11,8 @@
 //1. Membuat developmen env, ketika develop app sering butuh tool tool berbeda untuk tiap projek. Bisa dgn compose untuk setupnya
 //2. Automated test, kadang butuh banyak yg harus dijalankan manual sebelum automation test. Compose bisa bantu untuk otomatisasi proses setupnya
 //3. Development. Compose jg bisa digunakan untuk kasus develop app, jadi tidak perlu start manual app di server cukup dari compose
+
+//Install Docker Compose
+//Dulu docker compose terpisah dgn aplikasi docker, perlu dgn perintah docker-compose untuk menggunakannya
+//Sekarang sudah otomatis berada di dalam Docker, tidak perlu install manual
+docker compose version //untuk melihat versi docker compose
