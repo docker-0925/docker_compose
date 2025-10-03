@@ -1,1 +1,9 @@
 version: "3.8"
+
+services:
+  nginx-example:
+    container_name: nginx-example #disarankan sama dgn atribut diatas
+    image: nginx:latest
+  nginx-example2:
+    container_name: nginx-example2 #disarankan sama dgn atribut diatas
+    image: nginx:latest

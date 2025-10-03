@@ -25,3 +25,10 @@ File konfigurasi ini biasanya disimpan di file bernama docker-compose.yaml , dan
 //Sebuah jenis file yang biasa digunakan untuk menyimpan konfigurasi
 //Mirip seperti JSON, tapi tidak menggunakan kurung kurawal. Yaml memiliki atribut dan value {firstName : Hasan}
 https://yaml.org/
+
+//Membuat Container
+//Sebelumnya untuk membuat container harus menggunakan perintah docker create
+//Dengan compose bisa menggunakan configuration file di file yaml
+//Bisa menambahkan bagian services untuk menentukan container name, image docker container, dan spesifikasi lainnya
+docker compose create //untuk create container, jalankan di dalam folder konfigurasi yaml berada
+//Bisa membuat beberapa container sekaligus, namun docker bisa deteksi container mana yang belum dibuat itu yg dieksekusi
