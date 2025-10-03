@@ -47,3 +47,8 @@ docker compose ps //menampilkan container yang hanya ada di file yaml tsb
 //Menghentikan Container
 //Di docker compose ketika menghentikan container hanya akan men-stop container, tidak menghapus containernya
 docker compose stop //stop container dengan docker compose, akan menghentikan semua container di file yaml tsb
+
+//Menghapus Container
+//Bisa menghapus container di file konfigurasi dengan perintah docker container rm atau dengan docker compose
+//Jika dengan docker compose, akan otomatis menghapus semua container, network, dan volume yang digunakan container di file yaml
+docker compose down //hapus container di docker compose, jika posisi container running akan di stop dulu kemudian dihapus
