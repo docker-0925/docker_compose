@@ -37,3 +37,9 @@ docker compose create //untuk create container, jalankan di dalam folder konfigu
 //Container yang dibuat dengan docker compose, perlu dijalankan secara manual
 //Sebelumnya bisa menjalankan container dengan perintah docker container start
 docker compose start //jalankan container dengan docker compose, semua container di file yaml akan dijalankan
+
+//Melihat Container
+//Sebelumnya bisa melihat container dengan perintah docker container ls
+//Namun perintah tsb akan menampilkan semua container baik dibuat manual atau dengan docker compose
+//Dengan docker compose bisa melihat status container yang hanya terdapat di konfigurasi file yaml tersebut
+docker compose ps //menampilkan container yang hanya ada di file yaml tsb
