@@ -62,3 +62,7 @@ docker compose ls //melihat daftar project yang sedang berjalan, container harus
 //Dalam konfig docker compose, container disimpan dalam konfigurasi bernama services
 //Disana dapat menambahkan satu atau lebih services dalam konfigurasi filenya
 https://docs.docker.com/reference/compose-file/services/
+
+//Komentar
+//Keunggulan Yaml daripada Json salah satunya adalah dapat menambahkan komentar (#)
+//Pada Yaml komentar akan otomatis diharakan oleh docker compose
