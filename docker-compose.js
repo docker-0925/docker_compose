@@ -16,3 +16,7 @@
 //Dulu docker compose terpisah dgn aplikasi docker, perlu dgn perintah docker-compose untuk menggunakannya
 //Sekarang sudah otomatis berada di dalam Docker, tidak perlu install manual
 docker compose version //untuk melihat versi docker compose
+
+//Configuration File
+Docker compose menyimpan konfigurasinya dalam bentuk file YAML : https://yaml.org/ , file YAML mirip JSON tapi lebih sederhana
+File konfigurasi ini biasanya disimpan di file bernama docker-compose.yaml , dan nama projek akan default menggunakan nama folder lokasi konfigurasi ini disimpan
