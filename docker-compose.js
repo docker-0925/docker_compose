@@ -1,0 +1,13 @@
+//Docker Compose
+//Adalah tool yg digunakan untuk mendefinisikan & menjalankan multiple Docker Container secara sekaligus
+//Dengan docker compose bisa menggunakan file YAML untuk melakukan konfigurasi docker container
+//Melalui sebuah perintah bisa membuat dan menjalankan beberapa docker container sekaligus dari konfigurasi di file YAML
+//Dengan begitu, tidak perlu mengetikan perintah docker create manual untuk buat container
+//Fitur di docker compose :
+//1. Memiliki multiple isolated env dalam satu docker host/server/dibilang projek. Memungkinkan membuat banyak
+//jenis env untuk docker compose. Secara default nama projek akan menggunakan nama folder konfigurasi
+//2. Hanya membuat container yg berubah, dapat mendeteksi container mana yang harus dibuat & tidak perlu dibuat ulang dari perubahan konfigurasi
+//Kapan harus menggunakan docker compose :
+//1. Membuat developmen env, ketika develop app sering butuh tool tool berbeda untuk tiap projek. Bisa dgn compose untuk setupnya
+//2. Automated test, kadang butuh banyak yg harus dijalankan manual sebelum automation test. Compose bisa bantu untuk otomatisasi proses setupnya
+//3. Development. Compose jg bisa digunakan untuk kasus develop app, jadi tidak perlu start manual app di server cukup dari compose
