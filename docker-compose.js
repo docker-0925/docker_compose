@@ -43,3 +43,7 @@ docker compose start //jalankan container dengan docker compose, semua container
 //Namun perintah tsb akan menampilkan semua container baik dibuat manual atau dengan docker compose
 //Dengan docker compose bisa melihat status container yang hanya terdapat di konfigurasi file yaml tersebut
 docker compose ps //menampilkan container yang hanya ada di file yaml tsb
+
+//Menghentikan Container
+//Di docker compose ketika menghentikan container hanya akan men-stop container, tidak menghapus containernya
+docker compose stop //stop container dengan docker compose, akan menghentikan semua container di file yaml tsb
