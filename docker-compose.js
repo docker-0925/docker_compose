@@ -52,3 +52,8 @@ docker compose stop //stop container dengan docker compose, akan menghentikan se
 //Bisa menghapus container di file konfigurasi dengan perintah docker container rm atau dengan docker compose
 //Jika dengan docker compose, akan otomatis menghapus semua container, network, dan volume yang digunakan container di file yaml
 docker compose down //hapus container di docker compose, jika posisi container running akan di stop dulu kemudian dihapus
+
+//Project Name
+//Seperti diinfo diawal, saat menggunakan docker compose, informasi konfi compose akan disimpan dalam project
+//Dan secara default nama projectnya adalah nama folder lokasi file yaml berada
+docker compose ls //melihat daftar project yang sedang berjalan, container harus dalam posisi running
