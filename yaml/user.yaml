@@ -1,0 +1,24 @@
+#Example concept yaml file
+
+#Regular yaml
+firsName : M
+middleName : Hasan
+lastName : QaManager
+
+#Array yaml
+hobbies :
+  - Testing
+  - Reading
+  - Running
+
+#Nested object yaml
+skills :
+  apiTesting : postman
+  automationTesting : selenium
+
+#Array nested object yaml
+skillsTest :
+  - automationTesting : cypress
+    platform : website
+  - automationTesting : robotFramework
+    platform : mobile
