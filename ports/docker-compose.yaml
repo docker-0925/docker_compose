@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  nginx-port1:
+    container_name: nginx-port1 #disarankan sama dgn atribut diatas
+    image: nginx:latest
+    ports: #long-syntax
+      - protocol: tcp
+        published: 8080
+        target: 80
+  nginx-port2:
+    container_name: nginx-port2 #disarankan sama dgn atribut diatas
+    image: nginx:latest
+    ports: #short-syntax
+      - "8081:80"

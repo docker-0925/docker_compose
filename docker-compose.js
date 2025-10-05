@@ -66,3 +66,10 @@ https://docs.docker.com/reference/compose-file/services/
 //Komentar
 //Keunggulan Yaml daripada Json salah satunya adalah dapat menambahkan komentar (#)
 //Pada Yaml komentar akan otomatis diharakan oleh docker compose
+
+//Port
+//Ketika membuat container bisa mengekspose port keluar ke host dengan Port Forwarding
+//Hal ini juga bisa dikonfigurasi di file docker compose dengan atribute ports yang berisi array object port
+//1. Short Syntax : berisi string port <HOST>:<CONTAINER> -> 8080:80 = 8080 di host untuk diforward ke 80 di container
+//2. Long Syntax : dalam bentuk object yang berisi :
+//target : port di container, published : port di host, protocol : protokol port (tcp/udp), mode : host untuk port ditiap note cukup gunakan nilai host
