@@ -85,3 +85,16 @@ https://docs.docker.com/reference/compose-file/services/
 //SOURCE: lokasi host (relative/absolute path), TARGET: lokasi container, MODE: mode bindmount = ro:readonly, rw:readwrite (default)
 //2. Long Syntax : dibuat dalam nested object di volumes dengan atribute :
 //type: type mount (volume/bind), source: sumber path di host, target: path di container, read_only: flag rd, defaultnya false
+
+//Volume
+//Selain bisa untuk membuat container, docker compose juga bisa untuk membuat volume
+//Menggunakan atribut volumes pada konfigurasi file
+//Tidak bisa menjalankan docker compose create jika pada file yaml hanya ada konfigurasi volumes tanpa container
+//Untuk menggunakan volume ke container bisa seperti menggunakan bind mount dengan ketentuan :
+//Short syntax: ganti SOURCE dengan nama volume
+//Long syntax: ganti type menjadi volume, dan source menjadi nama volume
+//Jika sudah terdapat volume dan digunakan container, ketika dijalankan akan menunjukkan pembuat volume sebelum container
+docker volume ls //akan tertera volume tadi
+docker compose down //tidak akan menghapus volume, hanya menghapus container dan network saja
+docker volume rm <nama-volume> //jika ingin menghapus volume
+//Dengan begitu, ketika menjalankan lagi container2 yang sudah dihapus tadi, akan otomatis menggunakan volume yang sudah ada & tidak membuat ulang volume lagi
