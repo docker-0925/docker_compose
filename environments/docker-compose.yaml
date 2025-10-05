@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  mongodb-env :
+    image: mongo:latest
+    container_name: mongodb-env
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: hasan
+      MONGO_INITDB_ROOT_PASSWORD: hasan
+      MONGO_INITDB_DATABASE: admin

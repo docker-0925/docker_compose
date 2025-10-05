@@ -73,3 +73,7 @@ https://docs.docker.com/reference/compose-file/services/
 //1. Short Syntax : berisi string port <HOST>:<CONTAINER> -> 8080:80 = 8080 di host untuk diforward ke 80 di container
 //2. Long Syntax : dalam bentuk object yang berisi :
 //target : port di container, published : port di host, protocol : protokol port (tcp/udp), mode : host untuk port ditiap note cukup gunakan nilai host
+
+//Environment Variable
+//Saat membuat container bisa menambahkan environment variable untuk digunakan di dalam container
+//Dengan docker compose juga bisa menambahkan env variable dengan menggunakan attribute environment
