@@ -77,3 +77,11 @@ https://docs.docker.com/reference/compose-file/services/
 //Environment Variable
 //Saat membuat container bisa menambahkan environment variable untuk digunakan di dalam container
 //Dengan docker compose juga bisa menambahkan env variable dengan menggunakan attribute environment
+
+//Bind Mount
+//Docker compose juga bisa melakukan bindmount dengan atribut volumes di services
+//Bisa menambahkan satu atau lebih bind mount jika mau
+//1. Short Syntax : menggunakan nilai SOURCE:TARGET:MODE
+//SOURCE: lokasi host (relative/absolute path), TARGET: lokasi container, MODE: mode bindmount = ro:readonly, rw:readwrite (default)
+//2. Long Syntax : dibuat dalam nested object di volumes dengan atribute :
+//type: type mount (volume/bind), source: sumber path di host, target: path di container, read_only: flag rd, defaultnya false

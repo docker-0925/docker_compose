@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+
+  mongodb-bindmount1 :
+    image: mongo:latest
+    container_name: mongodb-bindmount1
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: hasan
+      MONGO_INITDB_ROOT_PASSWORD: hasan
+      MONGO_INITDB_DATABASE: admin
+    volumes: #short-syntax
+      - "./data-mongo1:/data/db"
+      #setiap add/update data di mongodb container (/data/db), akan otomatis add/update di host(./data-mongo1)
+
+  mongodb-bindmount2 :
+    image: mongo:latest
+    container_name: mongodb-bindmount2
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: hasan
+      MONGO_INITDB_ROOT_PASSWORD: hasan
+      MONGO_INITDB_DATABASE: admin
+    volumes: #long-syntax
+      - type: bind
+        source: "./data-mongo2"
+        target: "/data/db"
+        read_only: false
