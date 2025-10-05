@@ -1,0 +1,48 @@
+#version: "3.8"
+
+networks:
+  network_example1:
+    name: network_example1
+    driver: bridge
+  network_example2:
+    name: network_example2
+    driver: bridge
+
+services:
+
+  mongodb-volume1 :
+    image: mongo:latest
+    container_name: mongodb-volume1
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: hasan
+      MONGO_INITDB_ROOT_PASSWORD: hasan
+      MONGO_INITDB_DATABASE: admin
+    volumes: #short-syntax
+      - "mongo-data1:/data/db" #menggunakan volume yang sudah dibuat
+    networks:
+      - network_example1 #menggunakan network yang sudah dibuat
+
+  mongodb-mongodb-volume2 :
+    image: mongo:latest
+    container_name: mongodb-volume2
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: hasan
+      MONGO_INITDB_ROOT_PASSWORD: hasan
+      MONGO_INITDB_DATABASE: admin
+    volumes: #long-syntax
+      - type: volume
+        source: mongo-data2 #menggunakan volume yang sudah dibuat
+        target: "/data/db"
+        read_only: false
+    networks:
+      - network_example2 #menggunakan network yang sudah dibuat
+
+volumes:
+  mongo-data1:
+    name: mongo-data1
+  mongo-data2:
+    name: mongo-data2

@@ -98,3 +98,14 @@ docker volume ls //akan tertera volume tadi
 docker compose down //tidak akan menghapus volume, hanya menghapus container dan network saja
 docker volume rm <nama-volume> //jika ingin menghapus volume
 //Dengan begitu, ketika menjalankan lagi container2 yang sudah dihapus tadi, akan otomatis menggunakan volume yang sudah ada & tidak membuat ulang volume lagi
+
+//Network
+//Selain membuat container & volume, docker compose juga bisa membuat nework secara otomatis
+//Saat menjalankan file dengan docker compose, secara default semua container akan dihubungkan dalam sebuah network bernama <nama-project>_default
+//Jadi tidak perlu membuat network secara manual, hal ini bisa dilihat dengan inspect container yang sudah berjalan akan tertera pada bagian network
+//Namun tetap bisa jika ingin membuat network manual dengan docker compose sejumlah satu atau lebih dgn atribute neworks dengan :
+//name: nama network, driver: driver network yaitu: bridge, host atau none
+//Sama dengan volume, network perlu digunakan container akan bisa dibuat dan dijalankan
+//Dan ketika dibuat dan dijalankan maka akan tertera nama network yang kita buat manual, bukan otomatis network dengan nama default seperti sebelumnya
+docker network ls //akan tertera network yang dibuat tadi
+//Berbeda dengan volume yang jika menghapus container tidak ikut terhapus, network akan terhapus jika dihapus/down
