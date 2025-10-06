@@ -109,3 +109,9 @@ docker volume rm <nama-volume> //jika ingin menghapus volume
 //Dan ketika dibuat dan dijalankan maka akan tertera nama network yang kita buat manual, bukan otomatis network dengan nama default seperti sebelumnya
 docker network ls //akan tertera network yang dibuat tadi
 //Berbeda dengan volume yang jika menghapus container tidak ikut terhapus, network akan terhapus jika dihapus/down
+
+//Depends On
+//Terkadang dalam membuat banyak container di docker compose ingin membuat container yang butuh container lain sebelum berjalan
+//Atau gampangnya ingin ada urutan container berjalan, dimana defaultnya container berjalan bersama tanpa urutan pasti
+//Bisa membuat urutan menjalankan container dengan atribute depends_on
+//Dengan sebutkan bahwa container ini hanya bisa jalan kalo container lain sudah berjalan, bisa sebutkan satu/lebih container

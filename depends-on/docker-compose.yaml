@@ -1,0 +1,34 @@
+#version: "3.8"
+
+services:
+
+  mongodb-depends :
+    image: mongo:latest
+    container_name: mongodb-depends
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: hasan
+      MONGO_INITDB_ROOT_PASSWORD: hasan
+      MONGO_INITDB_DATABASE: admin
+    networks:
+      - network_example
+
+  mongodb-express-depends :
+    image: mongo-express:latest
+    container_name: mongodb-express-depends
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: hasan
+      ME_CONFIG_MONGODB_ADMINPASSWORD: hasan
+      ME_CONFIG_MONGODB_SERVER: mongodb-depends #gunakan container mongodb diatas
+    networks:
+      - network_example
+    depends_on:
+      - mongodb-depends #dijalankan ketika mongodb-depends sudah jalan
+
+networks:
+  network_example:
+    name: network_example
+    driver: bridge
