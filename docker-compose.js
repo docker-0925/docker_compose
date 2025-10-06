@@ -125,3 +125,10 @@ docker network ls //akan tertera network yang dibuat tadi
 //unless-stopped : selalu restart container, kecuali ketika dihentikan manual
 docker events --filter container=<container-name> //melihat kejadian apa saja yang terjadi di docker secara realtime
 https://docs.docker.com/reference/cli/docker/system/events/
+
+//Resource Limit
+//Di docker compose bisa mengatur resource limit untuk CPU & memory dari tiap container yang akan dibuat
+//Menggunakan attribute deploy, lalu didalamnya menggunakan atributte resources, di dalam resource ini bisa set limit & reservations
+//Reservations adalah resource yang dijamin bisa digunakan oleh container nantinya
+//Limit adalah limit maksimal untuk resource yang diberikan ke container, namun bisa saja limit ini akan rebutan dengan container lain
+docker container stats //melihat statistik penggunakan resource container yang berjalan
