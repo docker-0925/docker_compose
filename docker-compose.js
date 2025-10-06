@@ -115,3 +115,13 @@ docker network ls //akan tertera network yang dibuat tadi
 //Atau gampangnya ingin ada urutan container berjalan, dimana defaultnya container berjalan bersama tanpa urutan pasti
 //Bisa membuat urutan menjalankan container dengan atribute depends_on
 //Dengan sebutkan bahwa container ini hanya bisa jalan kalo container lain sudah berjalan, bisa sebutkan satu/lebih container
+
+//Restart
+//Secara default saat container mati, docker tidak akan menjalankan lagi jadi harus jalankan secara manual
+//Disini bisa memaksa container untuk selalu restart jika misal terjadi masalah dll dengan atribute restart dengan beberapa value :
+//no : default, tidak pernah restart
+//always : selalu restart jika container berhenti
+//on-failure : restart jika container error dengan indikasi error ketika exit
+//unless-stopped : selalu restart container, kecuali ketika dihentikan manual
+docker events --filter container=<container-name> //melihat kejadian apa saja yang terjadi di docker secara realtime
+https://docs.docker.com/reference/cli/docker/system/events/

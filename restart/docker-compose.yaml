@@ -1,0 +1,35 @@
+#version: "3.8"
+
+services:
+
+  mongodb-restart :
+    image: mongo:latest
+    container_name: mongodb-restart
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: hasan
+      MONGO_INITDB_ROOT_PASSWORD: hasan
+      MONGO_INITDB_DATABASE: admin
+    networks:
+      - network_example
+
+  mongodb-express-restart :
+    image: mongo-express:latest
+    container_name: mongodb-express-restart
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: hasan
+      ME_CONFIG_MONGODB_ADMINPASSWORD: hasan
+      ME_CONFIG_MONGODB_SERVER: mongodb-restart #gunakan container mongodb diatas
+    networks:
+      - network_example
+    depends_on:
+      - mongodb-restart #dijalankan ketika mongodb-restart sudah jalan
+
+networks:
+  network_example:
+    name: network_example
+    driver: bridge
