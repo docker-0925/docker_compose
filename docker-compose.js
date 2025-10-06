@@ -148,3 +148,13 @@ docker image ls //mengecek image yang sudah dibuat oleh docker compose
 //Hasil image dari compose tidak terhapus (spt volume) ketika docker image down, perlu manual hapus dengan docker image rm <nama-image>:<tag>
 //Ketika mengubah kode program kemudian stop & start ulang container dengan compose, bukan berarti kode program terbaru akan berjalan
 //Hal ini karena image versi baru otomatis terbuat, Perlu hapus container sebelumnya lalu buat ulang dengan image baru
+
+//Health Check
+//Secara default container yang dibuat manual/dengan docker compose, akan selalu menggunakan health check yang dibuat Dockerfile
+//Tapi ini bisa diubah di file konfigurasi compose dengan atribute healthcheck di services dengan beberapa atribute :
+//test: cara melakukan test healthcheck
+//interval: interval melakukan healtcheck
+//timeout: timeout melakukan healtcheck
+//retries: total retry ketika gagal
+//start_period: waktu mulai melakukan healthcheck
+//Ini hampir mirip dengan ketika membuat healthcheck di Dockerfile
