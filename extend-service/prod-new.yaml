@@ -1,0 +1,6 @@
+#version: "3.8"
+
+services:
+  app2:
+    environment:
+      - "MODE=prod" #lebih simple cukup sertakan mode, lainnya mengikuti induk docker-compose.yaml

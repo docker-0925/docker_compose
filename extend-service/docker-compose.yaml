@@ -1,0 +1,14 @@
+#version: "3.8"
+
+services:
+  app2:
+    container_name: app2
+    build:
+      context: "./app"
+      dockerfile: Dockerfile
+    image: "app-golang:1.2.4"
+    environment:
+      - "APP_PORT=8080"
+      - "MODE=local"
+    ports:
+      - "8080:8080"

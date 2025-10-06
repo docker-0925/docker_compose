@@ -158,3 +158,15 @@ docker image ls //mengecek image yang sudah dibuat oleh docker compose
 //retries: total retry ketika gagal
 //start_period: waktu mulai melakukan healthcheck
 //Ini hampir mirip dengan ketika membuat healthcheck di Dockerfile
+
+//Extend Service
+//Saat membuat aplikasi menggunakan Docker, kadang kita ingin menjalankan aplikasi tersebut ke beberapa server
+//Baik itu di local laptop, di server development, atau server production
+//Kadang ada kalanya beberapa hal berbeda, misal konfigurasi misalnya
+//Pada kasus ini, mau tidak mau kita harus membuat banyak file konfigurasi Docker Compose, misal untuk di local, di development dan di production
+//Docker Compose memiliki fitur bernama extend service, dimana kita bisa melakukan merge beberapa file konfigurasi sekaligus
+//Dengan begitu, kita bisa membuat file konfigurasi umum, dan spesial untuk setiap jenis environment misalnya
+//Saat menjalankan Docker Compose, kita bisa gunakan perintah -f namafile.yaml jika ingin menggunakan nama file yang bukan docker-compose.yaml
+docker compose -f <nama-file>.yaml //ganti file .yaml sesuai konfigurasi, perlu buat dan ganti file tiap servis
+//Untuk mengatasinya tetap buat file servis .yaml baru tapi hanya sertakan mode/env nya saja
+docker compose -f docker-compose.yaml -f <nama-file>.yaml //cara baru yang lebih efektif
