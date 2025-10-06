@@ -132,3 +132,19 @@ https://docs.docker.com/reference/cli/docker/system/events/
 //Reservations adalah resource yang dijamin bisa digunakan oleh container nantinya
 //Limit adalah limit maksimal untuk resource yang diberikan ke container, namun bisa saja limit ini akan rebutan dengan container lain
 docker container stats //melihat statistik penggunakan resource container yang berjalan
+
+//Docker File
+//Docker compose juga bisa digunakan untuk membuat container dari Dockerfile yang dibuat
+//Ini memudahkan sehingga tidak perlu membuat image dulu secara manual, semua bisa dilakukan oleh docker compose
+//Ketika membuat container dari Dockerfile tidak menggunakan atribute image namun atribut build yang terdiri :
+//context : berisi path ke file Dockerfile
+//dockerfile : nama file Dockerfile, bisa diganti
+//args : argument yang dibutuhkan ketika melakukan docker build
+//Defaultnya compose membuat image dgn nama random ketika melakukan build Dockerfile
+//Tapi bisa tentukan namanya dengan tambahkan atribut image pada service sehingga nama image akan mengikuti nama atribut image tsb
+//Ketika docker compose start, otomatis compose akan melakukan build terlebih dahulu jika image belum terbuat
+//Namun jika hanya ingin melakukan build image saja tanpa membuat container bisaa menggunakan perintah : docker compose build
+docker image ls //mengecek image yang sudah dibuat oleh docker compose
+//Hasil image dari compose tidak terhapus (spt volume) ketika docker image down, perlu manual hapus dengan docker image rm <nama-image>:<tag>
+//Ketika mengubah kode program kemudian stop & start ulang container dengan compose, bukan berarti kode program terbaru akan berjalan
+//Hal ini karena image versi baru otomatis terbuat, Perlu hapus container sebelumnya lalu buat ulang dengan image baru
